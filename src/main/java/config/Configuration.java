@@ -7,13 +7,14 @@ import simulator.checkout.AbstractRegister;
 import simulator.checkout.CheckoutLineInterface;
 import simulator.grocery.GroceryInterface;
 import simulator.store.AbstractGroceryStore;
+import structures.LinkedQueue;
 import structures.QueueInterface;
 
 /**
  * The {@link Configuration} class is a set of static definitions we will use to grade your
  * assignment.
  *
- * @author jcollard, jddevaug
+ * @author jcollard, jddevaug, sagesilberman
  */
 public final class Configuration {
 
@@ -31,7 +32,7 @@ public final class Configuration {
      * @return the {@link QueueInterface} that you would like to be graded
      */
     public static <T> QueueInterface<T> getQueueImplementation() {
-        return null;
+        return new LinkedQueue<T>();
     }
 
     /**
@@ -73,36 +74,34 @@ public final class Configuration {
     }
 
     /**
-   * Returns the {@link AbstractRegister} implementation you would like to be
-   * graded.
-   *
-   * @return the {@link AbstractRegister} implementation you would like to be
-   *         graded.
-   */
-  public static AbstractRegister getSimpleRegister() {
-    return null;
-  }
+     * Returns the {@link AbstractRegister} implementation you would like to be graded.
+     *
+     * @return the {@link AbstractRegister} implementation you would like to be graded.
+     */
+    public static AbstractRegister getSimpleRegister() {
+        return null;
+    }
 
-  /**
-   * Returns the {@link AbstractGroceryStore} implementation you would like to
-   * be graded for this Simple Store part of the project.
-   *
-   * @return the {@link AbstractGroceryStore} implementation you would like to
-   *         be graded for this Simple Store part of the project.
-   */
-  public static AbstractGroceryStore getSimpleStore() {
-    return null;
-  }
+    /**
+     * Returns the {@link AbstractGroceryStore} implementation you would like to be graded for this
+     * Simple Store part of the project.
+     *
+     * @return the {@link AbstractGroceryStore} implementation you would like to be graded for this
+     *         Simple Store part of the project.
+     */
+    public static AbstractGroceryStore getSimpleStore() {
+        return null;
+    }
 
-  /**
-   * Returns the {@link AbstractGroceryStore} implementation you would like to
-   * be graded for the Profitable Store part of the project.
-   *
-   * @return the {@link AbstractGroceryStore} implementation you would like to
-   *         be graded for the Profitable Store part of the project.
-   */
-  public static AbstractGroceryStore getProfitableStore() {
-    return null;
-  }
+    /**
+     * Returns the {@link AbstractGroceryStore} implementation you would like to be graded for the
+     * Profitable Store part of the project.
+     *
+     * @return the {@link AbstractGroceryStore} implementation you would like to be graded for the
+     *         Profitable Store part of the project.
+     */
+    public static AbstractGroceryStore getProfitableStore() {
+        return null;
+    }
 
 }
