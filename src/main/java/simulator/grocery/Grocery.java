@@ -1,13 +1,19 @@
 package simulator.grocery;
 
 public class Grocery implements GroceryInterface {
-    
+
     // set up some attributes
     private String name;
-    
+    private double price;
+    private double cost;
+    private double handlingRating;
+
     // constructor - initialize attributes
-    public Grocery(String n) {
+    public Grocery(String n, double p, double c, double hr) {
         name = n;
+        price = p;
+        cost = c;
+        handlingRating = hr;
     }
 
     @Override
@@ -17,20 +23,17 @@ public class Grocery implements GroceryInterface {
 
     @Override
     public double getPrice() {
-        // TODO Auto-generated method stub
-        return 0;
+        return price;
     }
 
     @Override
     public double getCost() {
-        // TODO Auto-generated method stub
-        return 0;
+        return cost;
     }
 
     @Override
     public double getHandlingRating() {
-        // TODO Auto-generated method stub
-        return 0;
+        return handlingRating;
     }
 
 }

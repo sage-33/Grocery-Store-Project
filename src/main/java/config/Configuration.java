@@ -71,8 +71,9 @@ public final class Configuration {
      *            the discount given to the shopper
      * @return the {@link AbstractReceipt} implementation you would like to be graded.
      */
-    public static AbstractReceipt getReceiptImplementation() {
-        return null;
+    public static AbstractReceipt getReceiptImplementation(final List<GroceryInterface> groceries,
+            final double discount) {
+        return new Receipt(groceries, discount);
     }
 
     /**
