@@ -5,6 +5,9 @@ import java.util.List;
 import simulator.checkout.AbstractReceipt;
 import simulator.checkout.AbstractRegister;
 import simulator.checkout.CheckoutLineInterface;
+import simulator.checkout.ExpressLine;
+import simulator.checkout.NormalLine;
+import simulator.checkout.Receipt;
 import simulator.grocery.GroceryInterface;
 import simulator.store.AbstractGroceryStore;
 import structures.LinkedQueue;
@@ -43,7 +46,7 @@ public final class Configuration {
      *         {@link CheckoutLineInterface#canEnterLine(simulator.shopper.Shopper)} is called
      */
     public static CheckoutLineInterface getNormalLine() {
-        return null;
+        return new NormalLine();
     }
 
     /**
@@ -56,7 +59,7 @@ public final class Configuration {
      *         {@link CheckoutLineInterface#canEnterLine(simulator.shopper.Shopper)} is called
      */
     public static CheckoutLineInterface getExpressLine() {
-        return null;
+        return new ExpressLine();
     }
 
     /**
@@ -68,8 +71,7 @@ public final class Configuration {
      *            the discount given to the shopper
      * @return the {@link AbstractReceipt} implementation you would like to be graded.
      */
-    public static AbstractReceipt getReceiptImplementation(final List<GroceryInterface> groceries,
-            final double discount) {
+    public static AbstractReceipt getReceiptImplementation() {
         return null;
     }
 

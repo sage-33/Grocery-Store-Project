@@ -5,7 +5,7 @@ package structures;
  * unbounded size meet the big-O time complexities specified in the interface.
  *
  * @param <T>
- *            the elements stored in the stack
+ *            the elements stored in the queue
  * 
  * @author sagesilberman
  */
@@ -134,5 +134,4 @@ public class LinkedQueue<T> implements QueueInterface<T> {
 
         return result.append("]").toString();
     }
-
 }
