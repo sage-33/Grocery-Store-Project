@@ -53,4 +53,40 @@ public class AbstractReceiptTest {
         double expectedSaleValue = expectedSubTotal - (expectedSubTotal * 0.15);
         assertEquals(expectedSaleValue, receipt.getSaleValue(), 0.00001);
     }
+
+    // logic test 1
+    @Test(timeout = 100)
+    public void testSaleValue3() {
+        AbstractReceipt receipt = Configuration.getReceiptImplementation(groceries, 0.50);
+        double expectedSubTotal = Groceries.getMilk().getPrice() + Groceries.getBeef().getPrice()
+                + Groceries.getApple().getPrice();
+        assertEquals(expectedSubTotal, receipt.getSubtotal(), 0.00001);
+
+        double expectedSaleValue = expectedSubTotal - (expectedSubTotal * 0.50);
+        assertEquals(expectedSaleValue, receipt.getSaleValue(), 0.00001);
+    }
+
+    // logic test 2
+    @Test(timeout = 100)
+    public void testSaleValue4() {
+        AbstractReceipt receipt = Configuration.getReceiptImplementation(groceries, 0.75);
+        double expectedSubTotal = Groceries.getBeef().getPrice() + Groceries.getMilk().getPrice()
+                + Groceries.getApple().getPrice();
+        assertEquals(expectedSubTotal, receipt.getSubtotal(), 0.00001);
+
+        double expectedSaleValue = expectedSubTotal - (expectedSubTotal * 0.75);
+        assertEquals(expectedSaleValue, receipt.getSaleValue(), 0.00001);
+    }
+
+    // exception test
+    @Test(timeout = 100, expected = IllegalArgumentException.class)
+    public void TestIllegalArgumentException() {
+        AbstractReceipt receipt = Configuration.getReceiptImplementation(groceries, 2.0);
+        double expectedSubTotal = Groceries.getMilk().getPrice() + Groceries.getBeef().getPrice()
+                + Groceries.getApple().getPrice();
+        assertEquals(expectedSubTotal, receipt.getSubtotal(), 0.00001);
+
+        double expectedSaleValue = expectedSubTotal - (expectedSubTotal * 2.0);
+        assertEquals(expectedSaleValue, receipt.getSaleValue(), 0.00001);
+    }
 }
