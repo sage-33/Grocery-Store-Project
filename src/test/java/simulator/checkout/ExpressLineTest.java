@@ -39,7 +39,23 @@ public class ExpressLineTest {
         mete = new Shopper(tooMuchBeef);
     }
 
-    // Logic test 1
+    @Test(timeout = 100, expected = IllegalArgumentException.class)
+    public void testLongList() {
+        CheckoutLineInterface col = Configuration.getExpressLine();
+        col.enqueue(mete);
+    }
+
+    @Test(timeout = 100, expected = NullPointerException.class)
+    public void testNPE1() {
+        Configuration.getExpressLine().enqueue(null);
+    }
+
+    @Test(timeout = 100, expected = NullPointerException.class)
+    public void testNPE2() {
+        Configuration.getExpressLine().canEnterLine(null);
+    }
+
+    // logic test 1
     @Test(timeout = 100)
     public void test3() {
         CheckoutLineInterface col = Configuration.getExpressLine();
@@ -53,7 +69,7 @@ public class ExpressLineTest {
         assertEquals(bob, col.dequeue());
     }
 
-    // Logic test 2
+    // logic test 2
     @Test(timeout = 100)
     public void test2() {
         CheckoutLineInterface col = Configuration.getExpressLine();
@@ -77,29 +93,13 @@ public class ExpressLineTest {
         assertEquals(pete, col.dequeue());
     }
 
-    // Exception test 1
+    // exception test
     @Test(timeout = 100, expected = IllegalArgumentException.class)
     public void testLongList2() {
         CheckoutLineInterface col = Configuration.getExpressLine();
         col.enqueue(pete);
         col.enqueue(mete);
         col.enqueue(bob);
-    }
-
-    @Test(timeout = 100, expected = IllegalArgumentException.class)
-    public void testLongList() {
-        CheckoutLineInterface col = Configuration.getExpressLine();
-        col.enqueue(mete);
-    }
-
-    @Test(timeout = 100, expected = NullPointerException.class)
-    public void testNPE1() {
-        Configuration.getExpressLine().enqueue(null);
-    }
-
-    @Test(timeout = 100, expected = NullPointerException.class)
-    public void testNPE2() {
-        Configuration.getExpressLine().canEnterLine(null);
     }
 
 }

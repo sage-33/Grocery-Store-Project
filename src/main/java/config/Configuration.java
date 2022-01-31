@@ -7,7 +7,6 @@ import simulator.checkout.AbstractRegister;
 import simulator.checkout.CheckoutLineInterface;
 import simulator.checkout.ExpressLine;
 import simulator.checkout.NormalLine;
-import simulator.checkout.Receipt;
 import simulator.grocery.GroceryInterface;
 import simulator.store.AbstractGroceryStore;
 import structures.LinkedQueue;
@@ -73,7 +72,7 @@ public final class Configuration {
      */
     public static AbstractReceipt getReceiptImplementation(final List<GroceryInterface> groceries,
             final double discount) {
-        return new Receipt(groceries, discount);
+        return null;
     }
 
     /**

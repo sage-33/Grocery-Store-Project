@@ -4,6 +4,12 @@ import simulator.shopper.Shopper;
 import structures.LinkedQueue;
 import structures.QueueInterface;
 
+/**
+ * Constructs a NormalLine with a shopper.
+ * 
+ * @author sagesilberman
+ *
+ */
 public class NormalLine extends LinkedQueue<Shopper> implements CheckoutLineInterface {
 
     @Override

@@ -39,7 +39,17 @@ public class NormalLineTest {
         mete = new Shopper(tooMuchBeef);
     }
 
-    // First logic test
+    @Test(timeout = 100, expected = NullPointerException.class)
+    public void testNPE1() {
+        Configuration.getNormalLine().enqueue(null);
+    }
+
+    @Test(timeout = 100, expected = NullPointerException.class)
+    public void testNPE2() {
+        Configuration.getNormalLine().canEnterLine(null);
+    }
+
+    // logic test 1
     @Test(timeout = 100)
     public void test2() {
         CheckoutLineInterface col = Configuration.getNormalLine();
@@ -55,7 +65,7 @@ public class NormalLineTest {
         assertEquals(bob, col.dequeue());
     }
 
-    // second logic test
+    // logic test 2
     @Test(timeout = 100)
     public void test3() {
         CheckoutLineInterface col = Configuration.getNormalLine();
@@ -83,7 +93,7 @@ public class NormalLineTest {
         assertEquals(pete, col.dequeue());
     }
 
-    // Exception test case
+    // exception test
     @Test(timeout = 100, expected = NullPointerException.class)
     public void testNPE3() {
         Configuration.getNormalLine().canEnterLine(mete);
@@ -92,15 +102,4 @@ public class NormalLineTest {
 
         Configuration.getNormalLine().canEnterLine(bob);
     }
-
-    @Test(timeout = 100, expected = NullPointerException.class)
-    public void testNPE1() {
-        Configuration.getNormalLine().enqueue(null);
-    }
-
-    @Test(timeout = 100, expected = NullPointerException.class)
-    public void testNPE2() {
-        Configuration.getNormalLine().canEnterLine(null);
-    }
-
 }

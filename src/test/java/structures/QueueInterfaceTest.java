@@ -150,7 +150,7 @@ public class QueueInterfaceTest {
         queue.dequeue();
     }
 
-    // Test case 1 that passes
+    // logic test 1
     @Test(timeout = 500)
     public void testPeek2() {
         queue.enqueue("One");
@@ -164,7 +164,7 @@ public class QueueInterfaceTest {
         assertEquals("Two", queue.peek());
     }
 
-    // Test case 2 that passes
+    // logic test 2
     @Test(timeout = 500)
     public void testPeek() {
         queue.enqueue("one");
@@ -178,7 +178,7 @@ public class QueueInterfaceTest {
 
     }
 
-    // Test exception case 1
+    // exception test
     @Test(timeout = 100, expected = IllegalStateException.class)
     public void testIllegalStateException3() {
         queue.peek();

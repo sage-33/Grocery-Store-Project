@@ -20,14 +20,6 @@ public class LinkedQueue<T> implements QueueInterface<T> {
     }
 
     @Override
-    /**
-     * Removes the element at the front of this queue and returns a reference to it. Throws an
-     * EmptyCollectionException if the queue is empty.
-     *
-     * @return the element at the front of this queue
-     * @throws IllegalStateException
-     *             if an empty collection exception occurs
-     */
     public T dequeue() {
         if (isEmpty()) {
             throw new IllegalStateException("queue");
@@ -43,14 +35,6 @@ public class LinkedQueue<T> implements QueueInterface<T> {
         return result;
     }
 
-    /**
-     * Returns the front most element of this queue.
-     * 
-     * @return the front most element of this queue.
-     * @throws IllegalStateException
-     *             if the queue is empty
-     * 
-     */
     @Override
     public T peek() {
         if (isEmpty())
@@ -59,14 +43,6 @@ public class LinkedQueue<T> implements QueueInterface<T> {
         return front.getElement();
     }
 
-    /**
-     * Adds the specified element to the rear of this queue.
-     *
-     * @param element
-     *            the element to be added to the rear of this queue
-     * @throws NullPointerException
-     *             if the element is empty
-     */
     @Override
     public QueueInterface<T> enqueue(T elem) {
         LinearNode<T> node = new LinearNode<T>(elem);
@@ -85,13 +61,6 @@ public class LinkedQueue<T> implements QueueInterface<T> {
         return this;
     }
 
-    /**
-     * 
-     * Returns {@code true} if the queue contains no elements and {@code false} otherwise.
-     * 
-     * @return {@code true} if the queue contains no elements and {@code false} otherwise.
-     * 
-     */
     @Override
     public boolean isEmpty() {
         if (count == 0) {
@@ -103,11 +72,6 @@ public class LinkedQueue<T> implements QueueInterface<T> {
         }
     }
 
-    /**
-     * Returns the number of elements in this queue.
-     * 
-     * @return the number of elements in this queue.
-     */
     @Override
     public int size() {
         return count;

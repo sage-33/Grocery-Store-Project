@@ -1,19 +1,25 @@
 package simulator.grocery;
 
+/**
+ * Constructs a Grocery item with it's name, price, cost, and handling rating.
+ * 
+ * @author sagesilberman
+ *
+ */
 public class Grocery implements GroceryInterface {
 
-    // set up some attributes
+    // set up attributes
     private String name;
     private double price;
     private double cost;
     private double handlingRating;
 
-    // constructor - initialize attributes
+    // initializes attributes
     public Grocery(String n, double p, double c, double hr) {
-        name = n;
-        price = p;
-        cost = c;
-        handlingRating = hr;
+        name = n; // name variable
+        price = p; // what the shopper pays
+        cost = c; // what the store pays
+        handlingRating = hr; // difficulty to handle this
     }
 
     @Override
