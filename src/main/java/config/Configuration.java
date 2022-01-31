@@ -8,6 +8,7 @@ import simulator.checkout.CheckoutLineInterface;
 import simulator.checkout.ExpressLine;
 import simulator.checkout.NormalLine;
 import simulator.checkout.Receipt;
+import simulator.checkout.SimpleRegister;
 import simulator.grocery.GroceryInterface;
 import simulator.store.AbstractGroceryStore;
 import structures.LinkedQueue;
@@ -82,7 +83,7 @@ public final class Configuration {
      * @return the {@link AbstractRegister} implementation you would like to be graded.
      */
     public static AbstractRegister getSimpleRegister() {
-        return null;
+        return new SimpleRegister();
     }
 
     /**
