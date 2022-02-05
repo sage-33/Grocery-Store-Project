@@ -2,7 +2,7 @@ package structures;
 
 /**
  * A {@link LinkedQueue} is a queue that is implemented using a Linked queue structure to allow for
- * unbounded size meet the big-O time complexities specified in the interface.
+ * unbounded size meets the big-O time complexities specified in the interface.
  *
  * @param <T>
  *            the elements stored in the queue

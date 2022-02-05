@@ -69,17 +69,6 @@ public class ExpressLineTest {
         assertEquals(bob, col.dequeue());
     }
 
-    // logic test 2
-    @Test(timeout = 100)
-    public void test2() {
-        CheckoutLineInterface col = Configuration.getExpressLine();
-        assertTrue(col.canEnterLine(bob));
-        col.enqueue(bob);
-        assertFalse(col.canEnterLine(mete));
-
-        assertEquals(bob, col.dequeue());
-    }
-
     @Test(timeout = 100)
     public void test() {
         CheckoutLineInterface col = Configuration.getExpressLine();
@@ -91,6 +80,17 @@ public class ExpressLineTest {
 
         assertEquals(bob, col.dequeue());
         assertEquals(pete, col.dequeue());
+    }
+
+    // logic test 2
+    @Test(timeout = 100)
+    public void test2() {
+        CheckoutLineInterface col = Configuration.getExpressLine();
+        assertTrue(col.canEnterLine(bob));
+        col.enqueue(bob);
+        assertFalse(col.canEnterLine(mete));
+
+        assertEquals(bob, col.dequeue());
     }
 
     // exception test

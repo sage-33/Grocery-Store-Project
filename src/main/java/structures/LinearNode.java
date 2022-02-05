@@ -3,11 +3,12 @@ package structures;
 /**
  * Serves as the node class, containing a reference to the next LinearNode<T> in the queue and a
  * reference to the element stored in that node.
- * 
- * @author sagesilberman
  *
  * @param <T>
  *            object of type T
+ * 
+ * @author sagesilberman
+ * 
  */
 public class LinearNode<T> {
 

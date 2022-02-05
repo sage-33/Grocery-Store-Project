@@ -14,7 +14,18 @@ public class Grocery implements GroceryInterface {
     private double cost;
     private double handlingRating;
 
-    // initializes attributes
+    /**
+     * Initializes attributes
+     * 
+     * @param n
+     *            the name of the grocery item
+     * @param p
+     *            the price of the item
+     * @param c
+     *            what the store pays
+     * @param hr
+     *            the difficulty to handle the item
+     */
     public Grocery(String n, double p, double c, double hr) {
         name = n; // name variable
         price = p; // what the shopper pays

@@ -50,7 +50,7 @@ public class SimpleRegisterTest {
         assertEquals("The number of time steps should be 8.", 8, t.getTimeSteps());
     }
 
-    // 1st test case
+    // logic 1 test case
     @Test(timeout = 100)
     public void testCreateTransaction3() {
         AbstractRegister register = Configuration.getSimpleRegister();
@@ -71,7 +71,7 @@ public class SimpleRegisterTest {
         assertEquals("The number of time steps should be 12.", 12, t.getTimeSteps());
     }
 
-    // second test case
+    // logic 2 test case
     @Test(timeout = 100)
     public void testCreateTransaction4() {
         AbstractRegister register = Configuration.getSimpleRegister();

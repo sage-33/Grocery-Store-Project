@@ -3,7 +3,7 @@ package simulator.checkout;
 import simulator.shopper.Shopper;
 
 /**
- * Constructs an ExpressLine if a shopper has 15 items or less.
+ * Constructs an ExpressLine for if a shopper has 15 items or less.
  * 
  * @author sagesilberman
  *

@@ -49,6 +49,18 @@ public class NormalLineTest {
         Configuration.getNormalLine().canEnterLine(null);
     }
 
+    @Test(timeout = 100)
+    public void test() {
+        CheckoutLineInterface col = Configuration.getNormalLine();
+        assertTrue(col.canEnterLine(bob));
+        col.enqueue(bob);
+        assertTrue(col.canEnterLine(pete));
+        col.enqueue(pete);
+
+        assertEquals(bob, col.dequeue());
+        assertEquals(pete, col.dequeue());
+    }
+
     // logic test 1
     @Test(timeout = 100)
     public void test2() {
@@ -77,18 +89,6 @@ public class NormalLineTest {
         col.enqueue(pete);
 
         assertEquals(mete, col.dequeue());
-        assertEquals(bob, col.dequeue());
-        assertEquals(pete, col.dequeue());
-    }
-
-    @Test(timeout = 100)
-    public void test() {
-        CheckoutLineInterface col = Configuration.getNormalLine();
-        assertTrue(col.canEnterLine(bob));
-        col.enqueue(bob);
-        assertTrue(col.canEnterLine(pete));
-        col.enqueue(pete);
-
         assertEquals(bob, col.dequeue());
         assertEquals(pete, col.dequeue());
     }

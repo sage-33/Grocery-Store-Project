@@ -20,7 +20,7 @@ public class Receipt extends AbstractReceipt {
     public double getSubtotal() {
         double subtotal = 0;
         for (GroceryInterface g : super.getGroceries()) {
-            subtotal = subtotal + g.getPrice();
+            subtotal += g.getPrice();
         }
         return subtotal;
     }

@@ -11,6 +11,8 @@ import simulator.checkout.Receipt;
 import simulator.checkout.SimpleRegister;
 import simulator.grocery.GroceryInterface;
 import simulator.store.AbstractGroceryStore;
+import simulator.store.ProfitableStore;
+import simulator.store.SimpleStore;
 import structures.LinkedQueue;
 import structures.QueueInterface;
 
@@ -94,7 +96,7 @@ public final class Configuration {
      *         Simple Store part of the project.
      */
     public static AbstractGroceryStore getSimpleStore() {
-        return null;
+        return new SimpleStore();
     }
 
     /**
@@ -105,7 +107,7 @@ public final class Configuration {
      *         Profitable Store part of the project.
      */
     public static AbstractGroceryStore getProfitableStore() {
-        return null;
+        return new ProfitableStore();
     }
 
 }

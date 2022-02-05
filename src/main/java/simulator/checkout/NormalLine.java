@@ -5,7 +5,7 @@ import structures.LinkedQueue;
 import structures.QueueInterface;
 
 /**
- * Constructs a NormalLine with a shopper.
+ * Constructs a NormalLine with a shopper if they can enter the line.
  * 
  * @author sagesilberman
  *
